@@ -1,52 +1,48 @@
+var curentTask = "";
 $(function() {
-  $("form#new-place").submit(function(event) {
+  $("form#new-task").submit(function(event) {
     event.preventDefault();
 
-    var inputLocation = $("#input-location").val();
-    var inputLandmark = $("#input-landmark").val();
-    var inputDate = $("#input-date").val();
-    var inputNotes = $("#input-notes").val();
+    var inputName = $("#input-task-name").val();
+    var inputDescription = $("#input-task-description").val();
 
-    var newPlace = new Place(inputLocation, inputLandmark, inputDate, inputNotes);
+    var newTask = new Task(inputName, inputDescription);
 
-    $("ul#places").append(
-      "<li><span class='place'>" + newPlace.location + "</span></li>");
+    $("ul#tasks").append(
+      "<li><span class='task'>" + newTask.taskName + "</span></li>");
 
-    $(".place").last().click(function(){
-      $("#show-place").show();
-      $("#show-place h2").text(newPlace.location);
-      newPlace.output(".location",".landmark",".date",".notes");
-      // $(".location").text(newPlace.location);
-      // $(".landmark").text(newPlace.landmark);
-      // $(".date").text(newPlace.date);
-      // $(".notes").text(newPlace.notes);
+    $(".task").last().click(function(){
+      currentTask = this;
+      $("#show-task").show();
+      $("#show-task h2").text(newTask.taskName);
+      newTask.output(".output-task",".output-description");
     });
+
+    // $(".output-task").last().click(function(){
+    //   $(this).remove();
+    // });
     clearInput();
+  });
+  $("#task-remove").click(function()
+  {
+    $(currentTask).remove();
   });
 });
 
-//Create a constructor for object Contact
-function Place(inputLocation, inputLandmark , inputDate, inputNotes){
-  this.location = inputLocation;
-  this.landmark = inputLandmark;
-  this.date = inputDate;
-  this.notes = inputNotes;
+//Create a constructor for object Task
+function Task(inputName, inputDescription){
+  this.taskName = inputName;
+  this.taskDescription = inputDescription;
 }
 
-Place.prototype.output = function (outputLocation,outputLandmark,outputDate,outputNotes)
+Task.prototype.output = function (outputName,outputDescription)
 {
-  $(outputLocation).text(this.location);
-  $(outputLandmark).text(this.landmark);
-  $(outputDate).text(this.date);
-  $(outputNotes).text(this.notes);
+  $(outputName).text(this.taskName);
+  $(outputDescription).text(this.taskDescription);
 };
-
-
 
 function clearInput()
 {
-  $("#input-location").val("");
-  $("#input-landmark").val("");
-  $("#input-date").val("");
-  $("#input-notes").val("");
+  $("#input-task-name").val("");
+  $("#input-task-description").val("");
 }
