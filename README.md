@@ -24,14 +24,10 @@ Make a to do list webpage where people can add tasks to create a list of things 
 
   * Example Input:
     * Task: Clean
-      * Windows
-      * Table
-      * Sink
+    * Windows, Table, Sink
   * Example Output:
     * Task: Clean
-      * Windows
-      * Table
-      * Sink
+    * Windows, Table, Sink
 
 ## Technology Used
 
