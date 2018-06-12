@@ -1,0 +1,16 @@
+body  {
+  background-color: lightcyan;
+}
+
+#show-info {
+  display: none;
+}
+
+.movieInfo {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.movieInfo:hover {
+  text-decoration: underline;
+}

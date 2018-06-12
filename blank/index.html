@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Movie</title>
+</head>
+<body class="container-fluid">
+  <h1>Movie</h1>
+  <h2>Age Groups </h2>
+      <ul>
+        <li>Child: 2 to 12years</li>
+        <li>Adult: 13 years and up</li>
+      </ul>
+    </div>
+      <h2>Prices</h2>
+      <ul>
+        <li>Child: Matinee $5.00 </li>
+        <li>Child: Regular $7.00</li>
+        <li>Adult: Matinee $10.00</li>
+        <li>Adult: Regular $12.00</li>
+      </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Purchase Tickets</h2>
+        <form id="new-movie">
+
+          <div class="form-group">
+            <label for="new-movie">Movie</label>
+            <select id="new-movie" class="custom-select" type="text">
+            <option value="Ocean-8">Oceans 8</option>
+            <option value="Solo">Solo</option>
+            <option value="Incredibles-2">Incredibles 2</option>
+            <option value="Avengers">Avengers</option>
+          </select>
+          </div>
+
+          <div class="form-group">
+            <label for="new-time">Time</label>
+            <div class="col-md-2">
+          <select id="new-time" class="custom-select" type="text">
+            <option value="Matanee">Matanee</option>
+            <option value="Afternoon">Afternoon</option>
+          </select>
+        </div>
+          </div>
+
+          <div class="form-group">
+            <label for="new-child">Child</label>
+            <input type="text" class="form-control" id="new-child">
+          </div>
+
+          <div class="form-group">
+            <label for="new-adult">Adult</label>
+            <input type="text" class="form-control" id="new-adult">
+          </div>
+
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+
+        <h2>Purchased:</h2>
+        <ul id="contacts">
+        </ul>
+        <div class="col-md-6">
+          <div id="show-info">
+            <h2></h2>
+            <p>Movie: <span class="movie-name"></span></p>
+            <p>Time: <span class="Time-name"></span></p>
+            <p>how many children: <span class="child-input"></span></p>
+            <p>How many adults: <span class="adult-input"></span></p>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
